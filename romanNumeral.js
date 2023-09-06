@@ -1,10 +1,8 @@
 const romanNumeral = {
     ten_symbols: ["I", "X", "C", "M", "X\u0305", "C\u0305", "M\u0305", "X\u033F", "C\u033F", "M\u033F"], 
-    //ten_symbols: ["i", "x", "c", "m", "x\u0305", "c\u0305", "m\u0305", "x\u033F", "c\u033F", "m\u033F"], 
-
+    
     five_symbols: ["V", "L", "D", "V\u0305", "L\u0305", "D\u0305", "V\u033F", "L\u033F", "D\u033F"], 
-    //five_symbols: ["v", "l", "d", "v\u0305", "l\u0305", "d\u0305", "v\u033F", "l\u033F", "d\u033F"], 
-
+    
     toNumeral: function(number) {
         //break number into a backwards digit array: 17 becomes [7, 1] 
         let digits = [];
