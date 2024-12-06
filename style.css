@@ -1,0 +1,36 @@
+html {
+    width: 100%;
+    height: 100%;
+    background-image: url("rome_skyline.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+@font-face {
+    font-family: Inscription;
+    src: url(Cinzel-Regular.ttf);
+}
+
+body {
+    font-size: calc(5vh); 
+    font-family: Inscription;
+    font-variant: small-caps;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+#clock {
+    margin-top: 2%;
+}
+
+#timeDisplay {
+    float: left;
+    margin-left: 5%;
+}
+
+#dateDisplay {
+    float: right;
+    margin-right: 5%;
+}
