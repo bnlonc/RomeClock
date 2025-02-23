@@ -40,50 +40,44 @@ let now = new Date();
 
 // Start the clock by pushing an update to all fields 
 function bootstrapClock() {
-
-    //document.body.style.fontSize = (window.innerHeight / 20) + "px";
-
     setModeAD();
 
     updateCalendar(now);
     updateMeridiem(now);
     
-    clockTick(now);
+    clockTick();
 }
 
-function clockTick(now) {
-
+function clockTick() {
+    // now.setSeconds(now.getSeconds() + 1);
     now = new Date();
 
     updateClock(now);
 
     if (!stopClock) {
-
-        setTimeout(function() {clockTick(now)}, 1000);
+        setTimeout(function() {clockTick()}, 1000);
     }
 }
 
 function updateClock(now) {
-
-    let h = now.getHours();
-    let m = now.getMinutes();
-    let s = now.getSeconds();
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+    let seconds = now.getSeconds();
     
-    time = romanNumeral.toNumeral(h == 0?12:(h % 12));
+    let timeString = romanNumeral.toNumeral((hours == 0) ? 12 : (hours % 12));
 
-    if (m != 0) {
-        time += separator + romanNumeral.toNumeral(m);
+    if (minutes != 0) {
+        timeString += separator + romanNumeral.toNumeral(minutes);
 
-        if (s != 0) {
-            time += separator + romanNumeral.toNumeral(s);
+        if (seconds != 0) {
+            timeString += separator + romanNumeral.toNumeral(seconds);
         }
     }
 
-    document.getElementById('time').innerHTML = time;
+    document.getElementById('time').innerHTML = timeString;
 
-    if (s == 0 && m == 0) {
-        
-        switch(h) {
+    if (seconds == 0 && minutes == 0) {
+        switch(hours) {
             case 0: 
                 updateCalendar(now);
             case 12: 
@@ -93,13 +87,11 @@ function updateClock(now) {
 }
 
 function updateMeridiem(now) {
-
-    let merString = (now.getHours() < 12)?'Ante':'Post';
-    document.getElementById('meridiem').innerHTML = merString + ' Meridiem';
+    let merString = (now.getHours() < 12) ? 'Ante' : 'Post';
+    document.getElementById('meridiem').innerHTML = `${merString} Meridiem`;
 }
 
 function updateCalendar(now) {
-
     document.getElementById('day').innerHTML = romanNumeral.toNumeral(now.getDate());
     document.getElementById('month').innerHTML = monthNames[now.getMonth()];
     
@@ -107,6 +99,5 @@ function updateCalendar(now) {
     if (modeAUC) {
         year += 753; 
     }
-
     document.getElementById('year').innerHTML = romanNumeral.toNumeral(year);
 }
