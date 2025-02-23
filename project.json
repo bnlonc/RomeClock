@@ -1,0 +1,31 @@
+{
+	"contentrating" : "Everyone",
+	"description" : "A simple clock I made as my first Wallpaper Engine submission, using a Roman numeral library I wrote for fun a while ago to show the time and date. Can display the year in AUC (years since the founding of Rome) instead of AD if you're into that.",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"modeauc" : 
+			{
+				"index" : 0,
+				"order" : 100,
+				"text" : "Display year as AUC",
+				"type" : "bool",
+				"value" : false
+			}
+		}
+	},
+	"preview" : "preview.jpg",
+	"ratingsex" : "none",
+	"ratingviolence" : "none",
+	"snapshotformat" : -1,
+	"snapshotoverlay" : "",
+	"tags" : [ "Medieval" ],
+	"title" : "Latin Clock",
+	"type" : "web",
+	"version" : 1,
+	"visibility" : "public",
+	"workshopid" : "3027441482",
+	"workshopurl" : "steam://url/CommunityFilePage/3027441482"
+}
